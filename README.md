@@ -559,3 +559,82 @@ function useNotice(): void {
 
 export default useNotice;
 ```
+
+## [리액트 렌더링 최적화]
+useMemo와 useCallback 은 리액트의 렌더링 성능 최적화를 위한 hook 이기 때문에 필수적으로 사용할 필요는 없다. 그럼에도 불구하고 사용해 볼 필요를 못 느낀다는 것이 그 기술의 장단점을 파악해서 결정한 것이 아니라 “단지 익숙하지 않은 기술을 배우지 않으려고 하는 나의 좁은 마음 때문” 이라는 생각이 스쳐지나갔다.
+
+- 주의점
+1. 함수형 컴포넌트는 그냥 함수다. 다시 한 번 강조하자면 함수형 컴포넌트는 단지 jsx를 반환하는 함수이다.
+2. 컴포넌트가 렌더링 된다는 것은 누군가가 그 함수(컴포넌트)를 호출하여서 실행되는 것을 말한다. 함수가 실행될 때마다 내부에 선언되어 있던 표현식(변수, 또다른 함수 등)도 매번 다시 선언되어 사용된다.
+3. 컴포넌트는 자신의 state가 변경되거나, 부모에게서 받는 props가 변경되었을 때마다 리렌더링 된다. (심지어 하위 컴포넌트에 최적화 설정을 해주지 않으면 부모에게서 받는 props가 변경되지 않았더라도 리렌더링 되는게 기본이다. )
+
+### useMemo 
+- useMemo(callback, [변경되는값]);
+
+두번째 배열이 바뀌기전까지 값을 기억
+함수 컴포넌트는 매번 함수가 새로 그려지며 실행되기 때문에 한번만 실행되면 되는 함수도 계속 호출되는 문제 발생
+변경되는 값이 없다면 한번만 실행후 값을 보관하는 역할로 쓸 수 있다.
+의존하는 값이 변경될 때에만 연산하므로 최적화가 개선
+
+-> 메모리제이션된 값을 반환한다
+
+### useCallback
+useCallback(callback, [변경되는값]);
+두번째 배열이 바뀌기전까지 함수 자체를 기억
+함수 생성 자체가 오래걸리는 경우(=함수 내의 연산이 복잡한 경우)쓰면 최적화에 도움됨
+변경되는 값이 없다면 state 값을 맨처음 값만 기억(console로 확인)
+변경되는 값이 있을때 새로운 값을 기억할 수 있다.
+자식컴포넌트에 함수를 props로 내릴때는 useCallback을 반드시 사용(자식 리렌더링 방지)
+
+컴포넌트가 렌더링 될 때 마다 함수를 새로 생성한다는 단점이 있습니다. 부모 컴포넌트가 렌더링되거나, 상태(state)가 변경되는 경우, React 컴포넌트는 렌더링을 유발합니다.
+
+-> 메모리제이션된 함수를 반환한다
+
+useMemo : '함수 return 값'을 기억
+useCallback : '함수'를 기억
+
+
+## mocking
+mocking은 이러한 상황에서 실제 객체인 척하는 가짜 객체를 생성하는 매커니즘을 제공한다.
+
+### jest.fn() 
+Jest는 가짜 함수(mock function)를 생성할 수 있도록 jest.fn() 함수를 제공한다.
+
+```js
+const mockFn = jest.fn();
+```
+그리고 이 가짜 함수는 일반 자바스크립트 함수와 동일한 방식으로 인자를 넘겨 호출할 수 있다.
+
+```js
+mockFn();
+mockFn(1);
+mockFn("a");
+mockFn([1, 2], { a: "b" });
+```
+
+mockReturnValue(리턴 값) 함수를 이용해서 가짜 함수가 어떤 값을 리턴해야할지 설정해줄 수 있다.
+```js
+mockFn.mockReturnValue("I am a mock!");
+console.log(mockFn()); // I am a mock!
+```
+
+### jest.spyOn()
+ 어떤 객체에 속한 함수의 구현을 가짜로 대체하지 않고, 해당 함수의 호출 여부와 어떻게 호출되었는지만을 알아내야 할 때가 있다. 이럴 때, Jest에서 제공하는 jest.spyOn(object, methodName) 함수를 이용하면 돤다.
+
+```js
+const calculator = {
+  add: (a, b) => a + b,
+};
+
+const spyFn = jest.spyOn(calculator, "add");//add라는 함수에 스파이 붙이기
+
+const result = calculator.add(2, 3);
+
+expect(spyFn).toBeCalledTimes(1);
+expect(spyFn).toBeCalledWith(2, 3);
+expect(result).toBe(5);
+```
+
+### jest.mock()
+이 함수는 자동으로 모듈을 모킹을 해주기 때문에 위와 같이 직접 일일이 모킹을 해줄 필요가 없다.
+

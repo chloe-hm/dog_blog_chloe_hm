@@ -34,7 +34,7 @@ function Header() {
         <Link href="/app/profile">
           <S.Button color={them.color.yellow}>profile</S.Button>
         </Link>
-        <Link href="/app/Introduction">
+        <Link href="/app/introduction">
           <a>
             <Icon
               ImageUrl={ImagePath.questionMark}

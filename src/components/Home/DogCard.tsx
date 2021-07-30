@@ -3,7 +3,7 @@ import Icon from 'common/icon';
 import * as ImagePath from 'common/imagePath';
 import * as I from 'common/interface';
 import message from 'common/message.json';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
 import * as S from 'styles/styled';
 
@@ -66,16 +66,19 @@ function DogCard(props: DogCardProps) {
       });
   };
 
-  const handleBookmark = (e: React.MouseEvent<HTMLElement>): void => {
-    e.preventDefault();
-    if (isBookmark) {
-      // 즐겨찾기 취소
-      cancelBookmarkApi();
-      return;
-    }
-    // 즐겨찾기
-    onBookmarkApi();
-  };
+  const handleBookmark = useCallback(
+    (e: React.MouseEvent<HTMLElement>): void => {
+      e.preventDefault();
+      if (isBookmark) {
+        // 즐겨찾기 취소
+        cancelBookmarkApi();
+        return;
+      }
+      // 즐겨찾기
+      onBookmarkApi();
+    },
+    []
+  );
 
   return (
     <DogCardS>

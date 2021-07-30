@@ -3,7 +3,7 @@ import axios from 'axios';
 import * as ImagePath from 'common/imagePath';
 import message from 'common/message.json';
 import firebase from 'firebase';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import styled from 'styled-components';
@@ -23,15 +23,15 @@ function Register() {
   const previewImage = selectedImageUrl ? selectedImageUrl : ImagePath.register;
 
   // 파일 선택
-  const onFileSelected = (e: { target: HTMLInputElement }) => {
+  const onFileSelected = useCallback((e: { target: HTMLInputElement }) => {
     const file: File = (e.target.files as FileList)[0];
-    if (selectedFile.size > 1000000) {
+    if (selectedFile?.size > 1000000) {
       alert('이미지의 최대 크기는 1MB입니다.');
       return;
     }
     setSelectedFile(file);
     setSelectedImageUrl(URL.createObjectURL(file));
-  };
+  }, []);
 
   // 미리보기 이미지 삭제
   const deletePreview = () => {
@@ -102,7 +102,6 @@ function Register() {
       }
     }
   };
-
   return (
     <RegisterLayoutS>
       <h1>이미지 등록</h1>

@@ -1,5 +1,5 @@
 import { imageTypes } from 'common/dummyData';
-import React, { KeyboardEvent, useState } from 'react';
+import React, { KeyboardEvent, useCallback, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { filterDogData } from 'store/modules/dogsData';
 import styled from 'styled-components';
@@ -13,13 +13,13 @@ function Search() {
   };
 
   // 품종으로 검색
-  const onSearchBreed = (e: KeyboardEvent) => {
+  const onSearchBreed = useCallback((e: KeyboardEvent) => {
     const query = { breed_ids: searchBreed };
     if (e.key === 'Enter') {
       dispatch(filterDogData(query));
       setSearchBreed('');
     }
-  };
+  }, []);
 
   // 이미지타입으로 검색
   const onSearchImageType = (value: string) => {
