@@ -1,10 +1,10 @@
-import Icon from 'common/icon';
-import * as ImagePath from 'common/imagePath';
 import Link from 'next/link';
 import React from 'react';
+import Icon from 'src/common/icon';
+import * as ImagePath from 'src/common/imagePath';
+import * as S from 'src/styles/styled';
+import them from 'src/styles/them';
 import styled from 'styled-components';
-import * as S from 'styles/styled';
-import them from 'styles/them';
 
 function Header() {
   // 로고클릭 라우팅시 스크롤 상단고정

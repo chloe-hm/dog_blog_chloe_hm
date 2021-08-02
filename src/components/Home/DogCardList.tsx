@@ -1,11 +1,11 @@
-import DogCard from 'components/Home/DogCard';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useDispatch, useSelector } from 'react-redux';
-import { InitialDogsData } from 'store/interface';
-import { moreDogsData } from 'store/modules/dogsData';
-import * as S from 'styles/styled';
+import DogCard from 'src/components/Home/DogCard';
+import { InitialDogsData } from 'src/store/interface';
+import { moreDogsData } from 'src/store/modules/dogsData';
+import * as S from 'src/styles/styled';
 
 interface DogCardListProps {
   unUseInfinite?: boolean;

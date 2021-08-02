@@ -1,8 +1,8 @@
-import * as Api from 'api';
-import * as I from 'common/interface';
-import DogCard from 'components/Home/DogCard';
 import React, { useEffect, useState } from 'react';
-import * as S from 'styles/styled';
+import * as Api from 'src/api';
+import * as I from 'src/common/interface';
+import DogCard from 'src/components/Home/DogCard';
+import * as S from 'src/styles/styled';
 
 interface LikeListProps {
   likeList?: I.DogDetailData[];

@@ -1,9 +1,9 @@
-import * as Api from 'api';
-import Introduction from 'components/Introduction';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import React from 'react';
-import { wrapper } from 'store/store';
+import * as Api from 'src/api';
+import Introduction from 'src/components/Introduction';
+import { wrapper } from 'src/store/store';
 
 export interface IntroductionDataI {
   introductionData: { title: string; name: string; description: string };

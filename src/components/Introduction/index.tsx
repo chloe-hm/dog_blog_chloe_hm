@@ -1,5 +1,5 @@
-import { IntroductionDataI } from 'pages/app/Introduction';
 import React from 'react';
+import { IntroductionDataI } from 'src/pages/app/introduction';
 import styled from 'styled-components';
 
 function Introduction({ introductionData }: IntroductionDataI) {

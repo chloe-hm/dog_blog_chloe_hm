@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { createWrapper } from 'next-redux-wrapper';
 import createSagaMiddleware from 'redux-saga';
-import rootReducer from 'store/modules/rootReducer';
-import rootSaga from 'store/sagas/index';
+import rootReducer from 'src/store/modules/rootReducer';
+import rootSaga from 'src/store/sagas/index';
 
 // create store
 const makeStore = () => {

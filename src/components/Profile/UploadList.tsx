@@ -1,9 +1,9 @@
-import * as Api from 'api';
-import * as I from 'common/interface';
-import message from 'common/message.json';
-import DogCard from 'components/Home/DogCard';
 import React, { useState } from 'react';
-import * as S from 'styles/styled';
+import * as Api from 'src/api';
+import * as I from 'src/common/interface';
+import message from 'src/common/message.json';
+import DogCard from 'src/components/Home/DogCard';
+import * as S from 'src/styles/styled';
 
 interface UploadListProps {
   uploadList: I.DogDetailData[];

@@ -1,9 +1,9 @@
-import * as I from 'common/interface';
-import DogCard from 'components/Home/DogCard';
 import Link from 'next/link';
 import React from 'react';
+import * as I from 'src/common/interface';
+import DogCard from 'src/components/Home/DogCard';
+import * as S from 'src/styles/styled';
 import styled from 'styled-components';
-import * as S from 'styles/styled';
 
 interface BookMarksProps {
   bookmarkList: I.DogDetailData[];

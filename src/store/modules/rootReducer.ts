@@ -1,6 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
-import dogsData from 'store/modules/dogsData';
+import dogsData from 'src/store/modules/dogsData';
 
 function rootReducer(state, action) {
   switch (action.type) {

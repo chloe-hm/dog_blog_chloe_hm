@@ -1,11 +1,11 @@
-import useScroll from 'common/hooks/useScroll';
-import Home from 'components/Home';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import React from 'react';
 import { END } from 'redux-saga';
-import { getDogsData } from 'store/modules/dogsData';
-import { wrapper } from 'store/store';
+import useScroll from 'src/common/hooks/useScroll';
+import Home from 'src/components/Home';
+import { getDogsData } from 'src/store/modules/dogsData';
+import { wrapper } from 'src/store/store';
 
 function HomePage() {
   // 스크롤유지기능

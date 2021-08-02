@@ -1,9 +1,9 @@
-import * as Api from 'api';
-import * as I from 'common/interface';
-import message from 'common/message.json';
-import Bookmarks from 'components/Bookmarks';
 import { GetServerSideProps } from 'next';
 import React from 'react';
+import * as Api from 'src/api';
+import * as I from 'src/common/interface';
+import message from 'src/common/message.json';
+import Bookmarks from 'src/components/Bookmarks';
 
 interface BookmarkI {
   bookmarkList: I.DogDetailData[];

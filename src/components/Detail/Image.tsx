@@ -1,10 +1,10 @@
-import * as Api from 'api';
-import Icon from 'common/icon';
-import * as ImagePath from 'common/imagePath';
-import * as I from 'common/interface';
-import message from 'common/message.json';
 import dynamic from 'next/dynamic';
 import React, { useState } from 'react';
+import * as Api from 'src/api';
+import Icon from 'src/common/icon';
+import * as ImagePath from 'src/common/imagePath';
+import * as I from 'src/common/interface';
+import message from 'src/common/message.json';
 import styled from 'styled-components';
 
 const ReactViewer = dynamic(() => import('react-viewer'), { ssr: false });

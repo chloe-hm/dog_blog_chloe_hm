@@ -1,7 +1,7 @@
-import { imageTypes } from 'common/dummyData';
 import React, { KeyboardEvent, useCallback, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { filterDogData } from 'store/modules/dogsData';
+import { imageTypes } from 'src/common/dummyData';
+import { filterDogData } from 'src/store/modules/dogsData';
 import styled from 'styled-components';
 
 function Search() {

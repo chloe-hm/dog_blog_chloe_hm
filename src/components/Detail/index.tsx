@@ -1,8 +1,8 @@
-import * as I from 'common/interface';
-import Image from 'components/Detail/Image';
-import Information from 'components/Detail/Information';
-import SimilarList from 'components/Detail/SimilarList';
 import React from 'react';
+import * as I from 'src/common/interface';
+import Image from 'src/components/Detail/Image';
+import Information from 'src/components/Detail/Information';
+import SimilarList from 'src/components/Detail/SimilarList';
 import styled from 'styled-components';
 
 interface DetailProps {

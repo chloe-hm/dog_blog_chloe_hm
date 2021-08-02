@@ -1,14 +1,14 @@
-import * as Api from 'api';
 import axios from 'axios';
-import * as ImagePath from 'common/imagePath';
-import message from 'common/message.json';
 import firebase from 'firebase';
 import React, { useCallback, useState } from 'react';
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import * as Api from 'src/api';
+import * as ImagePath from 'src/common/imagePath';
+import message from 'src/common/message.json';
+import * as S from 'src/styles/styled';
+import them from 'src/styles/them';
 import styled from 'styled-components';
-import * as S from 'styles/styled';
-import them from 'styles/them';
 import onMessageListener from '../../../firebase/onMessageListener';
 
 function Register() {

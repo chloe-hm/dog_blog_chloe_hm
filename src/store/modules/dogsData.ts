@@ -1,5 +1,5 @@
 import { createAction, createReducer } from '@reduxjs/toolkit';
-import * as I from 'store/interface';
+import * as I from 'src/store/interface';
 
 // Action Types
 export const GET_DOGS_DATA = 'GET_DOGS_DATA';

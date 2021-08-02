@@ -1,14 +1,14 @@
-import * as I from 'common/interface';
-import ModalLayout from 'common/modal';
-import LikeList from 'components/Profile/LikeList';
-import UploadList from 'components/Profile/UploadList';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import Modal from 'react-modal';
+import * as I from 'src/common/interface';
+import ModalLayout from 'src/common/modal';
+import LikeList from 'src/components/Profile/LikeList';
+import UploadList from 'src/components/Profile/UploadList';
+import * as S from 'src/styles/styled';
+import them from 'src/styles/them';
 import styled from 'styled-components';
-import * as S from 'styles/styled';
-import them from 'styles/them';
 
 interface ProfileProps {
   likeList: I.DogDetailData[];

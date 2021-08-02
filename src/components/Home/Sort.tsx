@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { sortedDogsData } from 'store/modules/dogsData';
-import * as S from 'styles/styled';
-import them from 'styles/them';
+import { sortedDogsData } from 'src/store/modules/dogsData';
+import * as S from 'src/styles/styled';
+import them from 'src/styles/them';
 
 function Sort() {
   const dispatch = useDispatch();

@@ -1,12 +1,12 @@
-import * as Api from 'api';
-import message from 'common/message.json';
-import Detail from 'components/Detail';
 import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { END } from 'redux-saga';
-import { getDogsData } from 'store/modules/dogsData';
-import { wrapper } from 'store/store';
+import * as Api from 'src/api';
+import message from 'src/common/message.json';
+import Detail from 'src/components/Detail';
+import { getDogsData } from 'src/store/modules/dogsData';
+import { wrapper } from 'src/store/store';
 
 function DetailPage() {
   const router = useRouter();

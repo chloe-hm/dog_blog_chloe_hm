@@ -6,4 +6,4 @@ export {
   moreDogsData,
   sortedDogsData,
   sortedDogsDataSuccess
-} from 'store/modules/dogsData';
+} from 'src/store/modules/dogsData';

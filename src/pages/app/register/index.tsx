@@ -1,6 +1,6 @@
-import React from 'react';
-import Register from 'components/Register';
 import Head from 'next/head';
+import React from 'react';
+import Register from 'src/components/Register';
 
 function RegisterPage() {
   return (

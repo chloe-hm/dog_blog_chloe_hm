@@ -1,11 +1,11 @@
-import * as Api from 'api';
-import * as I from 'common/interface';
-import message from 'common/message.json';
-import Profile from 'components/Profile';
-import Likes from 'components/Profile/LikeList';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import React from 'react';
+import * as Api from 'src/api';
+import * as I from 'src/common/interface';
+import message from 'src/common/message.json';
+import Profile from 'src/components/Profile';
+import Likes from 'src/components/Profile/LikeList';
 
 interface ProfileI {
   likeList: I.DogDetailData[];

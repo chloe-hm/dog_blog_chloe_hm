@@ -20,7 +20,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": false,
-    "baseUrl": "src"
+    "baseUrl": "."
   },
   "exclude": [
     "node_modules"
@@ -32,14 +32,6 @@
     "firebase/firebase.js"
   ],
   "paths": {
-    "components/*": [
-      "components/*",
-      "pages/*",
-      "store/*",
-      "styles/*",
-      "utils/*",
-      "server/*",
-      "firebase/*"
-    ]
+    "src/*": ["src/*"]
   }
 }

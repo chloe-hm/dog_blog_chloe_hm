@@ -1,5 +1,5 @@
-import * as I from 'common/interface';
 import React from 'react';
+import * as I from 'src/common/interface';
 import styled from 'styled-components';
 
 interface InformationProps {

@@ -1,17 +1,17 @@
-import * as Api from 'api';
-import message from 'common/message.json';
-import Layout from 'components/Layout';
 import firebase from 'firebase';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import Loading from 'pages/Loading';
 import React, { useEffect, useState } from 'react';
 import { CookiesProvider, useCookies } from 'react-cookie';
-import { wrapper } from 'store/store';
+import * as Api from 'src/api';
+import message from 'src/common/message.json';
+import Layout from 'src/components/Layout';
+import Loading from 'src/pages/Loading';
+import { wrapper } from 'src/store/store';
+import GlobalStyle from 'src/styles/global';
+import theme from 'src/styles/them';
 import { ThemeProvider } from 'styled-components';
-import GlobalStyle from 'styles/global';
-import theme from 'styles/them';
 import firebaseConfig from '../../firebase/firebaseConfig';
 
 function MyApp({ Component, pageProps }: AppProps) {
