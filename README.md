@@ -638,3 +638,5 @@ expect(result).toBe(5);
 ### jest.mock()
 이 함수는 자동으로 모듈을 모킹을 해주기 때문에 위와 같이 직접 일일이 모킹을 해줄 필요가 없다.
 
+### moduleNameMapper
+jest.config.js에서 typescript + jest 절대경로 성정
