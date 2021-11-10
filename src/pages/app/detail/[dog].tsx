@@ -14,11 +14,14 @@ function DetailPage() {
   const [dogData, setDogData] = useState([]);
 
   // 해당 강아지 데이터 호출
+  // 서버사이드로 (context..?)
+  // await...로 (useEffect 안에서)
   useEffect(() => {
     if (!router.isReady) return;
     Api.dogList
       .searchDogData(query)
       .then((res) => {
+        // 공통적으로 처리
         if (res.status === 200) {
           setDogData(res.data);
         }

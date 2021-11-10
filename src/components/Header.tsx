@@ -29,7 +29,9 @@ function Header() {
       </TitleS>
       <SectionS>
         <Link href="/app/register">
-          <S.Button color={them.color.blue}>register</S.Button>
+          <S.Button color={them.color.blue} data-testid="mytest">
+            register
+          </S.Button>
         </Link>
         <Link href="/app/profile">
           <S.Button color={them.color.yellow}>profile</S.Button>

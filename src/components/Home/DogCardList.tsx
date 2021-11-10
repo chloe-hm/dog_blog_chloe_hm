@@ -12,19 +12,23 @@ interface DogCardListProps {
 }
 
 function DogCardList(props: DogCardListProps) {
+  console.log('랜더링 체크');
+
   const dispatch = useDispatch();
   const { unUseInfinite } = props;
   const storeData = useSelector((state: InitialDogsData) => state.dogsData);
   const storeDogsData = storeData.dogsData;
+  console.log('🚀 ~ storeDogsData', storeDogsData);
   const isError = storeData.isError;
 
-  const [dogsData, setDogsData] = useState(storeDogsData);
   const [hasMore, setHasMore] = useState(!unUseInfinite);
   const [page, setPage] = useState(1);
 
-  useEffect(() => {
-    setDogsData(storeDogsData);
-  }, [storeDogsData]);
+  // 랜더링 두번 되는 이유임..!
+  const [dogsData, setDogsData] = useState(storeDogsData);
+  // useEffect(() => {
+  //   setDogsData(storeDogsData);
+  // }, [storeDogsData]);
 
   // 리덕스 에러시 처리
   useEffect(() => {

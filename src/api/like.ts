@@ -1,6 +1,6 @@
-import axios from 'api/axios';
-import * as T from 'api/type';
 import querystring from 'querystring';
+import axios from 'src/api/axios';
+import * as T from 'src/api/type';
 
 // 좋아요
 export function postLike(query: object) {

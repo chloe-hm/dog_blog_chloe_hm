@@ -57,6 +57,7 @@ function Profile(props: ProfileProps) {
   );
 }
 
+// 밴의 방법 참고
 const ProfileLayoutS = styled.div`
   text-align: center;
   margin: 170px 320px;

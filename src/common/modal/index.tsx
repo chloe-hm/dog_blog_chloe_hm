@@ -1,8 +1,8 @@
-import { CloseButtonS, modalStyles } from 'common/modal/modal.style';
 import React, { ReactNode, useState } from 'react';
 import Modal from 'react-modal';
-import * as S from 'styles/styled';
-import them from 'styles/them';
+import { CloseButtonS, modalStyles } from 'src/common/modal/modal.style';
+import * as S from 'src/styles/styled';
+import them from 'src/styles/them';
 
 interface ModalLayoutProps {
   children: ReactNode;

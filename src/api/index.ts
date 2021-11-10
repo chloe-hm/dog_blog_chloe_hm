@@ -1,6 +1,7 @@
-export * as bookmark from 'api/bookmark';
-export * as dogList from 'api/dogList';
-export * as image from 'api/image';
-export * as introduction from 'api/introduction';
-export * as like from 'api/like';
-export * as user from 'api/user';
+export * as bookmark from 'src/api/bookmark';
+export * as dogList from 'src/api/dogList';
+export * as image from 'src/api/image';
+export * as introduction from 'src/api/introduction';
+export * as like from 'src/api/like';
+export * as user from 'src/api/user';
+

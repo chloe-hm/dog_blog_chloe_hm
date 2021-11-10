@@ -1,5 +1,5 @@
-import axios from 'api/axios';
 import querystring from 'querystring';
+import axios from 'src/api/axios';
 
 // 이미지 등록
 export function postImage(formData: object, options: object) {

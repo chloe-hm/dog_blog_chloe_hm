@@ -1,6 +1,6 @@
-import axios from 'api/axios';
-import * as T from 'api/type';
 import querystring from 'querystring';
+import axios from 'src/api/axios';
+import * as T from 'src/api/type';
 
 // 강아지들의 데이터 호출
 export function getDogsData(query: T.DogListQuery) {

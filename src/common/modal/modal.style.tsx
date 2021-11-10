@@ -1,5 +1,5 @@
+import * as S from 'src/styles/styled';
 import styled from 'styled-components';
-import * as S from 'styles/styled';
 
 export const modalStyles = {
   content: {
